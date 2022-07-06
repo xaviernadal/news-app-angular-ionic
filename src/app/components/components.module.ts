@@ -4,17 +4,19 @@ import { IonicModule } from '@ionic/angular';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { StorageService } from '../services/storage.service';
+import { ErrorHandlerComponent } from './error-handler/error-handler.component';
 
 
 
 @NgModule({
-  declarations: [ArticleComponent, ArticlesComponent],
+  declarations: [ArticleComponent, ArticlesComponent, ErrorHandlerComponent],
   imports: [
     CommonModule,
     IonicModule
   ],
   exports: [
-    ArticlesComponent
+    ArticlesComponent,
+    ErrorHandlerComponent
   ],
   providers: [StorageService],
 })

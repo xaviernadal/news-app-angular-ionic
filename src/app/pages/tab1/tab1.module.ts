@@ -8,6 +8,13 @@ import { ExploreContainerComponentModule } from '../../explore-container/explore
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { ComponentsModule } from '../../components/components.module';
 
+import {  HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
+
 @NgModule({
   imports: [
     IonicModule,
@@ -16,6 +23,14 @@ import { ComponentsModule } from '../../components/components.module';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
     ComponentsModule,
+    // other stuff...
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   declarations: [Tab1Page]
 })

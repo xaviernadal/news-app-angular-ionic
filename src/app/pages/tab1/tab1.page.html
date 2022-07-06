@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" mode="ios" class="ion-no-border">
   <ion-toolbar>
     <ion-title>
-      News
+      {{ 'tab1.tabName' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,11 +9,14 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense" mode="ios" class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">News</ion-title>
+      <ion-title size="large">{{ 'tab1.tabName' | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <app-error-handler *ngIf="showComp"  [message]='"tab1.errorMessage" | translate'></app-error-handler>
+
   <app-articles [articles]="articles"></app-articles>
+
   <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData()">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>

@@ -1,0 +1,16 @@
+{
+    "tab1": {
+        "tabName": "News",
+        "errorMessage": "Can not show the article. Please check your internet connection and try again later"
+    },
+    "general": {
+        "language": "Language",
+        "changeLanguage": "Change Language"
+    },
+    "tabs": {
+        "tab1": "For you",
+        "tab2": "Headers",
+        "tab3": "Favorite",
+        "tab4": "Language"
+    }
+}

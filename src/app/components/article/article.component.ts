@@ -65,9 +65,9 @@ export class ArticleComponent {
         this.onShareArticle();
       }
     };
-    if (this.platform.is('capacitor')) {
+    //if (this.platform.is('capacitor')) {
       normalBts.unshift(share);
-    }
+    //}
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'Options',
       buttons: normalBts

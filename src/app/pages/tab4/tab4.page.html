@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'general.changeLanguage' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <!--  other stuff -->
+    <ion-card-content>
+      <p translate [translateParams]="{ lang: language }">general.changeLanguage</p>
+      <ion-item> <!-- add this block -->
+        <ion-label translate>general.language</ion-label>
+        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' [placeholder]='"general.language" | translate'>
+          <ion-select-option value='cat'>Català</ion-select-option>
+          <ion-select-option value='en'>English</ion-select-option>
+        </ion-select>
+      </ion-item> <!-- add this block (end) -->
+    </ion-card-content>
+  </ion-card>

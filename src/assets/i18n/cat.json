@@ -1,0 +1,16 @@
+{
+    "tab1": {
+        "tabName": "Notícies",
+        "errorMessage": "No es pot mostrar l'article. Revisa la teva connexió a internet i prova-ho més tard."
+    },
+    "general": {
+        "language": "Idioma",
+        "changeLanguage": "Canvia l'idioma"
+    },
+    "tabs": {
+        "tab1": "Per tu",
+        "tab2": "Notícies",
+        "tab3": "Guardats",
+        "tab4": "Idioma"
+    }
+}

@@ -1,11 +1,16 @@
-import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { TabsPageRoutingModule } from './tabs-routing.module';
+import { IonicModule } from '@ionic/angular';
 
-import { TabsPage } from './tabs.page';
+import { Tab4PageRoutingModule } from './tab4-routing.module';
+
+import { Tab4Page } from './tab4.page';
+import { ComponentsModule } from '../../components/components.module';
+import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
+import { RouterModule } from '@angular/router';
+
 
 import {  HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -14,12 +19,17 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
+
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule,
+    IonicModule,
+    Tab4PageRoutingModule,
+    ComponentsModule,
+    ExploreContainerComponentModule,
+    RouterModule.forChild([{ path: '', component: Tab4Page }]),
+
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -28,6 +38,6 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  declarations: [TabsPage]
+  declarations: [Tab4Page]
 })
-export class TabsPageModule {}
+export class Tab4PageModule {}
